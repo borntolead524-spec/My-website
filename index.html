@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Echelon Visuals provides elite graphic design and visual identity services for the top 1% of brands.">
+    <title>Echelon | The Upper Tier of Identity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="logo">ECHELON.</div>
+        
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact" class="btn-nav">Contact</a></li>
+        </ul>
+
+        <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+            <svg id="theme-icon" viewBox="0 0 24 24">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+    </nav>
+
+    <div class="overlay-menu" id="mobileMenu">
+        <a href="#home" onclick="toggleMenu()">Home</a>
+        <a href="#work" onclick="toggleMenu()">Work</a>
+        <a href="#services" onclick="toggleMenu()">Services</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
+    </div>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>ECHELON</h1>         
+            <span class="hero-subtitle">The Upper Tier of Identity</span>
+            <p class="hero-desc">
+                Crafting visual dominance for the top 1% of brands. Elevate your business with premium branding strategies.
+            </p>
+            <a href="#contact" class="btn-primary">Start a Project</a>
+        </div>
+    </header>
+
+    <section id="work" class="container">
+        <h2 class="section-title">Expertise</h2>
+        
+        <div class="grid-layout">
+            <div class="card">
+                <img src="me.jpg" alt="Corporate Flyer Design">
+                <h3>Corporate Branding</h3>
+                <p>High-conversion flyer design for a top-tier corporate client.</p>
+            </div>
+
+            <div class="card">
+                <img src="flyer.jpg" alt="Academic Flyer Design">
+                <h3>Academic Institution</h3>
+                <p>Informational campaign materials for a university.</p>
+            </div>
+
+            <div class="card">
+                <img src="sharp.jpg" alt="Brand Logo Design">
+                <h3>Brand Identity</h3>
+                <p>Minimalist logo design system for a tech startup.</p>
+            </div>
+
+            <div class="card">
+                <img src="lv_0_20251228002007.png" alt="Photo Rebranding">
+                <h3>Photo Rebranding</h3>
+                <p>Advanced retouching: Turning old assets into modern visuals.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="container">
+        <h2 class="section-title">Capabilities</h2>
+        <div class="services-list">
+            <div class="service-item">
+                <h3>Strategy</h3>
+                <p>Planning and consulting to ensure your visual identity hits the right business goals.</p>
+            </div>
+            <div class="service-item">
+                <h3>Design</h3>
+                <p>Creating visual systems that are beautiful, functional, and user-friendly.</p>
+            </div>
+            <div class="service-item">
+                <h3>Web Development</h3>
+                <p>Building clean, fast, and responsive websites that work seamlessly on any device.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Ready to work together?</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+            Send me an email and let's discuss how I can help you dominate your market.
+        </p>
+        
+        <div class="contact-actions">
+            <a href="mailto:borntosucceed524@gmail.com" class="btn-secondary">Email Me</a>
+            <a href="https://wa.me/2347051534608?text=Hello%20Echelon,%20I%20am%20interested%20in%20your%20services" target="_blank" class="btn-primary btn-whatsapp">Chat on WhatsApp</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ECHELON. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.querySelector('.menu-icon');
+            menu.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+
+        // Theme Toggle
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+            
+            body.classList.toggle('light-mode');
+            
+            // Check current mode
+            const isLight = body.classList.contains('light-mode');
+            
+            // Update Icon
+            if (isLight) {
+                // Sun Icon
+                icon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                // Moon Icon
+                icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Check Local Storage on Load
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                toggleTheme(); // Switch to light if saved
+            }
+        };
+    </script>
+
+</body>
+</html>
